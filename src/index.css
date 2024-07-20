@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+img {
+  max-width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+nav.mobile {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 65%;
+  height: 100%;
+  z-index: 99;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+nav.mobile.close {
+  left: -100vw;
+  @apply shadow-2xl p-8;
+}
+
+nav.mobile.open {
+  left: 0;
+  @apply shadow-2xl p-8;
+}
+
+nav.mobile ul {
+  @apply flex items-start flex-col gap-4;
+}
+
+nav.mobile ul li {
+  @apply font-bold text-lg cursor-pointer;
+}
+
+.cart {
+  width: calc(100% - 10px);
+  margin-left: 5px;
+  margin-right:  5px;
+}
+
+@media (min-width: 1024px) {
+  .big-image {
+    height: 500px;
+  }
 }
